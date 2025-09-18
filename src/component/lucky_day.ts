@@ -6,8 +6,7 @@ const SELECTORS = {
   "yesBtn": "button:has-text('Yes, of course!')",
   "noBtn": 'button:has-text("Nah, I\'ll skip.")',
   "promo": "//*[@class='promo']"
-};  
-
+};
 
 export class LuckyDay {
 private readonly page: Page;
@@ -15,8 +14,8 @@ private readonly promo: Locator;
 private readonly yesBtn: Locator;
 private readonly noBtn: Locator;
 
-  constructor(private readonly page: Page) {
-    this.page = page;
+  constructor(private readonly bingoPage: Page) {
+    this.page = bingoPage;
     this.promo = this.page.locator(SELECTORS.promo);
     this.yesBtn = this.page.locator(SELECTORS.yesBtn);
     this.noBtn = this.page.locator(SELECTORS.noBtn);
