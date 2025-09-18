@@ -20,6 +20,11 @@ A Playwright-powered project for automating and testing a coffee cart web applic
     npx playwright test
     ```
 
+3. **Run test**
+    ```bash
+    npx playwright test coffemenu_copy.spec.ts
+    ```
+
 ## Project Structure
 
 - `/tests` - Playwright test scripts

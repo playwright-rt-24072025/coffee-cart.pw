@@ -34,4 +34,8 @@ export class BasePage {
   async timeSleep(s: number) {
     await new Promise((resolve) => setTimeout(resolve, s * 1000));
   }
+
+  async getByPlaceholder(placeholderText: string): Promise<Locator> {
+    return this.page.getByPlaceholder(placeholderText);
+  }
 }
