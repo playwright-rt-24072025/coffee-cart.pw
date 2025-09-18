@@ -2,27 +2,35 @@ import { Locator, Page } from "@playwright/test";
 
 const SELECTORS = {
   menuPageLocator: "//a[@aria-label='Menu page']",
-  cardPageLocator: "//a[@aria-label='Card page']",
+  cartPageLocator: "//a[@aria-label='Cart page']",
+  githubPageLocator: "//a[@aria-label='GitHub page']"
 };
 
 export class BasePage {
   protected readonly page: Page;
   protected readonly menuPageLink: Locator;
-  protected readonly cardPageLink: Locator;
+  protected readonly cartPageLink: Locator;
+  protected readonly githubPageLink: Locator;
 
   constructor(page: Page) {
     this.page = page;
     this.menuPageLink = this.page.locator(SELECTORS.menuPageLocator);
-    this.cardPageLink = this.page.locator(SELECTORS.cardPageLocator);
+    this.cartPageLink = this.page.locator(SELECTORS.cartPageLocator);
+    this.githubPageLink = this.page.locator(SELECTORS.githubPageLocator);
   }
 
   async gotoMenuPage() {
     await this.menuPageLink.click();
   }
 
-  async gotoCardPage() {
-    await this.cardPageLink.click();
+  async gotoCartPage() {
+    await this.cartPageLink.click();
   }
+
+  async gotoGithubPage() {
+    await this.githubPageLink.click();
+  }
+
   async timeSleep(s: number) {
     await new Promise((resolve) => setTimeout(resolve, s * 1000));
   }
